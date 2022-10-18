@@ -35,14 +35,7 @@ device = torch.device(dev)
 print(f"Using {device} device")
 print(torch.cuda.get_device_name(torch.cuda.current_device()))
 
-"""#Making Spectrogram and Saving them
-
-```
-`# This is formatted as code`
-```
-
-
-"""
+"""#Making Spectrogram and Saving them"""
 
 def plot_specgram(waveform, sample_rate, title="Spectrogram"):
     waveform = waveform.numpy()
@@ -56,8 +49,7 @@ def plot_specgram(waveform, sample_rate, title="Spectrogram"):
         axes[c].specgram(waveform[c], Fs=sample_rate)
         if num_channels > 1:
             axes[c].set_ylabel(f"Channel {c+1}")
-    #figure.suptitle(title)
-    #plt.show(block=False)
+    plt.show(block=False)
 
 path = '/content/SpecGram'
 if not os.path.exists(path):
